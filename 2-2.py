@@ -14,3 +14,5 @@ taro = Character("たろー")
 taro.speak("おはようなぎ")
 print(taro.name)
 
+
+
