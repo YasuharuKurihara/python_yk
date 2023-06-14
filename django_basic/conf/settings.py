@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'myapp.apps.MyappConfig', #追加
+    'myapp2.apps.Myapp2Config',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -74,23 +75,23 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-      'default': {
-          'ENGINE': 'django.db.backends.postgresql_psycopg2',
-          'NAME': 'myapp',
-          'USER': 'postgres',
-          'PASSWORD': 'postgres1995',
-          'HOST': 'localhost',
-          'PORT': '',
-      }
-  }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+# DATABASES = {
+#       'default': {
+#           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#           'NAME': 'myapp',
+#           'USER': 'postgres',
+#           'PASSWORD': 'postgres1995',
+#           'HOST': 'localhost',
+#           'PORT': '',
+#       }
+# }
 
 
 

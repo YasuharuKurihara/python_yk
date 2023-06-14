@@ -22,4 +22,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp.urls')),        #myapp.urlsを読み込む
+    path('myapp2/', include('myapp2.urls')),
 ]

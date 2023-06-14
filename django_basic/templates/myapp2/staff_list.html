@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>スタッフ一覧</title>
+</head>
+<body>
+    <h1>スタッフ一覧</h1>
+    {% for staff in staff_list %}
+    <div>
+      {{ staff.name }}
+    </div>
+    {% endfor %}
+</body>
+</html>
