@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一覧ページ</title>
+</head>
+<body>
+    <h1>一覧ページ</h1>
+    {% for article in article_list %}
+    <div>
+      {{ article.title }}
+    </div>
+    {% endfor %}
+</body>
+</html>

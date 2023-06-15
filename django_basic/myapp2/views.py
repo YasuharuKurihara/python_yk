@@ -53,3 +53,27 @@ class StaffCreateView(CreateView):
     # 処理が成功した場合の、リダイレクト先
     # 追加・削除・更新は、処理の後にリダイレクトするのが普通
     success_url = reverse_lazy('myapp:home')
+
+class StaffDetailView(DetailView):
+    # primary_key=Trueなフィールドを自分で作っていない場合は、これが暗黙のうちに、全てのモデルに存在する
+    #id = models.PositiveIntegerField('id', primary_key=True)
+    model = Staff
+    template_name = 'myapp2/staff_detail.html'
+
+    # def get_object(self, queryset=None):
+    #     #self.kwargsはURL内のint:pkといった部分が入っている
+    #     staff = Staff.objects.get(id=1)
+    #     # ->Staff.objects.get(pk=1) 今回、URLはstaff_detail/1/
+    #     # ->Staff.objects.get(pk=1) pkというのはprimarykeyのこと、今回ならidフィールドの事
+    #     print(staff)
+    #     return staff
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        #DetailViewにはget_objectメソッドがあり
+        #URLのidを元にモデルのインスタンスを取得している
+        staff = self.get_object()
+        context['books'] = staff.rented_books.all()
+        return context
+

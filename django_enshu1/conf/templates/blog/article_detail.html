@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <h1>詳細ページ</h1>
+        <div>
+            <p>タイトル:{{ article.title }}</p>
+            <p>本文:{{ article.text | default:'未入力です'}}</p>
+            <p>作成日：{{ article.crated_at | date:'Y/m/d' }}</p>
+            <p>カテゴリ:{{ article.category.name }} </p>
+            <p>
+                タグ:{% for tag in article.tags.all %}
+                    {{ tag.name }}
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+</body>
+</html>
