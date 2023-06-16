@@ -6,7 +6,6 @@
 </head>
 <body>
 {% extends 'base.html' %}
-
 {% block content %}
     <div>
         <h1>社員詳細ページ</h1>
@@ -31,45 +30,5 @@
         </p>
     </div>
 {% endblock %}
-
-<!--&lt;!&ndash;    <div>{{ staff.name }}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;    <div>&ndash;&gt;-->
-<!--&lt;!&ndash;        スタッフのid. {{staff.pk}} ({{staff.id}}と書くのと基本的に同じ)&ndash;&gt;-->
-<!--&lt;!&ndash;        {{staff.name}}&ndash;&gt;-->
-<!--&lt;!&ndash;    </div>&ndash;&gt;-->
-<!--{% extends 'base.html' %}-->
-
-<!--{% block content %}-->
-<!--    <div>-->
-<!--        <h1>社員詳細ページ</h1>-->
-<!--        <p>ビジネスネーム:{{ staff.name }}</p>-->
-<!--        &lt;!&ndash; 取り出したフィールドがOneToneOneやForeignKeyの場合は、さらに.フィールド名と書ける &ndash;&gt;-->
-<!--        <p>メールアドレス:{{ staff.information.email|default:'未入力'}}</p>-->
-<!--        <p>入社日：{{ staff.information.hire_date|date:'Y/m/d' }}</p>-->
-<!--        <p>部署:{{ staff.department.name }}</p>-->
-<!--        <p>{{staff.information.birthday}}</p>-->
-<!--        <p>-->
-<!--            {% if staff.information.at_desk %}-->
-<!--                出社している-->
-
-<!--&lt;!&ndash;            {% elif 条件２ %}&ndash;&gt;-->
-
-<!--            {% else %}-->
-<!--                不在-->
-<!--            {% endif %}-->
-<!--        </p>-->
-<!--        <p>-->
-<!--&lt;!&ndash;            インスタンス.ManyToManyField名.all &ndash;&gt;-->
-<!--            {% for book in staff.rented_books.all %}-->
-<!--                {{ book.name }},-->
-<!--            {% endfor %}-->
-<!--        </p>-->
-<!--&lt;!&ndash;        <p>&ndash;&gt;-->
-<!--&lt;!&ndash;            {% for book in books %}&ndash;&gt;-->
-<!--&lt;!&ndash;                {{ book.name }},&ndash;&gt;-->
-<!--&lt;!&ndash;            {% endfor %}&ndash;&gt;-->
-<!--&lt;!&ndash;        </p>&ndash;&gt;-->
-<!--    </div>-->
-<!--{% endblock %}-->
 </body>
 </html>

@@ -1,6 +1,8 @@
 from django.views import generic
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Article, Tag
+from .forms import ArticleCreateForm, TagCreateForm
+from django.urls import reverse_lazy
 
 
 class Home(generic.TemplateView):
@@ -18,3 +20,16 @@ class ArticleDetailView(DetailView):
 class TagListView(ListView):
     model = Tag
     template_name = 'blog/tag_list.html'
+
+
+class ArticleCreateView(CreateView):
+    model = Article
+    template_name = 'blog/article_create.html'
+    success_url = reverse_lazy('blog:home')
+    form_class = ArticleCreateForm
+
+class TagCreateView(CreateView):
+    model = Tag
+    template_name = 'blog/tag_create.html'
+    success_url = reverse_lazy('blog:tag_list')
+    form_class = TagCreateForm

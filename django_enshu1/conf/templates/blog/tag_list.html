@@ -5,9 +5,14 @@
     <title>tag_list</title>
 </head>
 <body>
+{% extends 'base.html' %}
+{% block content %}
   <h1>タグの一覧ページ</h1>
-    {% for tag in tag_list %}
-        {{ tag.name }}
-    {% endfor %}
+  <div>
+      {% for tag in tag_list %}
+        <p>{{ tag.name }}</p>
+      {% endfor %}
+  </div>
+{% endblock %}
 </body>
 </html>

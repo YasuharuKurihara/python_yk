@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>一覧ページ</title>
+    <title>article 一覧ページ</title>
 </head>
 <body>
-    <h1>一覧ページ</h1>
+{% extends 'base.html' %}
+{% block content %}
+    <h1>article 一覧ページ</h1>
     {% for article in article_list %}
     <div>
-      {{ article.title }}
+        <p><a href="{% url 'blog:article_detail' article.id %}">{{ article.title }}</a></p>
     </div>
     {% endfor %}
+{% endblock %}
 </body>
 </html>

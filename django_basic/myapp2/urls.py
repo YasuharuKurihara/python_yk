@@ -10,4 +10,6 @@ urlpatterns = [
     path('staff_list/', views.StaffListView.as_view(), name='staff_list'),
     #データ型:変数名　<int型の値がここに埋め込まれて、pkという名前デビューで使えます。という意味>
     path('staff_detail/<int:pk>/', views.StaffDetailView.as_view(), name='staff_detail'),
+    path('staff_information_update/<int:pk>/',
+     views.StaffInformationUpdateView.as_view(), name='staff_information_update'),
 ]

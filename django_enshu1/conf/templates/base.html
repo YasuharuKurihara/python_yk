@@ -3,10 +3,11 @@
   <html lang="ja">
   <head>
       <link rel="stylesheet" href="{% static 'css/basic.css' %}">
-      <title>{% block title %}Python 講座{% endblock %}</title>
+      <title>{% block title %}Python 演習１{% endblock %}</title>
   </head>
   <body>
-      <p><a href="{% url 'myapp:home' %}">Homeへ</a></p>
+      <p><a href="{% url 'blog:home' %}">Homeへ</a></p>
+      <p><a href="{% url 'blog:article_list' %}">記事一覧ページへ</a></p>
       <div id="content">
 <!--    継承するときは「block ●●」というように必ず書く-->
         {% block content %}{% endblock %}

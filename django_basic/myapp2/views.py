@@ -1,7 +1,7 @@
 from django.views.generic import CreateView, DetailView, UpdateView, FormView, ListView
 from django.urls import reverse_lazy
 from .models import StaffInformation, Department, Book, Staff
-from .forms import StaffInformationForm, DepartmentForm, BookForm, StaffForm
+from .forms import StaffInformationForm, DepartmentForm, BookForm, StaffForm, StaffInformationUpdateForm
 
 class StaffListView(ListView):
     model = Staff
@@ -76,4 +76,16 @@ class StaffDetailView(DetailView):
         staff = self.get_object()
         context['books'] = staff.rented_books.all()
         return context
+
+class StaffInformationUpdateView(UpdateView):
+    model = StaffInformation
+    form_class = StaffInformationUpdateForm
+    template_name = 'myapp2/staff_information_update.html'
+    success_url = reverse_lazy('myapp:home')
+
+    #フォームが作る入力欄のHTMLに一括でclass="input"のように指定したい場合
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     for field_name, field in self.fields.items():
+    #         field.widget.attrs['class'] = 'form-input'
 

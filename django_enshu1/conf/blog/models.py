@@ -18,7 +18,7 @@ class Article(models.Model):
     text = models.TextField('本文')   #TextField : 複数行のテキスト入力行になる
     crated_at = models.DateTimeField('作成日', default=timezone.now)   #timezone.now：現在時間の取得
     category = models.ForeignKey(Category, on_delete = models.PROTECT, verbose_name = 'カテゴリ')
-    tegs = models.ManyToManyField(Tag, blank=True, null=True, verbose_name='タグ')
+    tags = models.ManyToManyField(Tag, blank=True, null=True, verbose_name='タグ')
 
     def __str__(self):
         return self.title
