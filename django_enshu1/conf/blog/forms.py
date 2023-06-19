@@ -10,8 +10,13 @@ class ArticleCreateForm(forms.ModelForm):
         fields = '__all__'
         # fields = ('title','text', 'crated_at', 'category', 'tags')
 
-    class TagCreateForm(forms.ModelForm):
+class TagCreateForm(forms.ModelForm):
 
-        class Meta:
-            model = Tag
-            fields = '__all__'
+    class Meta:
+        model = Tag
+        fields = '__all__'
+
+class ArticleUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        fields = '__all__'

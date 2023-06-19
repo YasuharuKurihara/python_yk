@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crud.apps.CrudConfig',
     'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -124,3 +125,15 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+#アプリケーション名.モデル名
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+
+LOGIN_URL = 'accounts:login'
+
+LOGIN_REDIRECT_URL = 'accounts:home'
+
+
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
