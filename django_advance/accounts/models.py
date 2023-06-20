@@ -6,4 +6,4 @@ class CustomUser(AbstractUser):
     email = models.EmailField('メールアドレス', unique=True)
 
     #Userモデルにないフィールドの追加
-    age = models.PositiveIntegerField('年齢')
+    age = models.PositiveIntegerField('年齢', default=0)

@@ -34,13 +34,13 @@ class TagCreateView(CreateView):
     success_url = reverse_lazy('blog:tag_list')
     form_class = TagCreateForm
 
-class ArticleUpdate(generic.UpdateView):
+class ArticleUpdateView(generic.UpdateView):
     model = Article
     form_class = ArticleUpdateForm
     template_name = 'blog/article_update.html'
-    success_url = reverse_lazy('crud:goods_create')
+    success_url = reverse_lazy('blog:article_list')
 
-class ArticleDelete(generic.DeleteView):
+class ArticleDeleteView(generic.DeleteView):
     model = Article
     template_name = 'blog/article_delete.html'
-    success_url = reverse_lazy('crud:goods_list')
+    success_url = reverse_lazy('blog:article_list')

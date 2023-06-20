@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views import generic
 from .models import Goods
-from .forms import GoodsCreateForm, GoodsUpdateForm
+from .forms import GoodsCreateForm, GoodsUpdateForm, ImageSizeLimitationForm
 
 
 class GoodsCreate(generic.CreateView):
@@ -29,3 +29,8 @@ class GoodsDelete(generic.DeleteView):
     model = Goods
     template_name = 'crud/goods_delete.html'
     success_url = reverse_lazy('crud:goods_list')
+
+class GoodsCreateWithImageSizeLimitation(generic.CreateView):
+    form_class = ImageSizeLimitationForm
+    template_name = 'crud/goods_create.html'
+    success_url = '/crud/goods_list'
