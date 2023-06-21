@@ -1,5 +1,5 @@
 from django import forms
-from .models import Article, Tag
+from .models import Article, Tag, Comment
 
 
 class ArticleCreateForm(forms.ModelForm):
@@ -20,3 +20,14 @@ class ArticleUpdateForm(forms.ModelForm):
     class Meta:
         model = Article
         fields = '__all__'
+
+class SearchForm(forms.Form):
+    keyword = forms.CharField(label='キーワード', required=False)
+
+
+class CommentCreateForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        # ページに表示したいモデルのフィールドを、文字列で書きます
+        fields = ('name', 'text',) #targetフィールドを含めない
